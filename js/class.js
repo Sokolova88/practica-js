@@ -406,3 +406,51 @@ class Toggle {
 // secondToggle.toggle();
 // console.log(secondToggle.on);
 // console.groupEnd("secondToggle");
+
+class Guest {
+  constructor({ fullName } = {}) {
+    this.fullName = fullName;
+  }
+
+  firstName = "";
+  lastName = "";
+  guestAge = "";
+  guestRoom = "";
+
+  // Get & Set Guest name
+  get fullName() {
+    return ` Firstname: ${this.firstName} \n LastName: ${this.lastName}`;
+  }
+
+  set fullName(newName) {
+    const fullName = newName.split(" ");
+    this.firstName = fullName[0];
+    this.lastName = fullName[1];
+  }
+
+  // Get & Set Guest Age
+  get age() {
+    return ` Fullname: ${this.firstName} ${this.lastName} - age ${this.guestAge}`;
+  }
+
+  set age(newAge) {
+    this.guestAge = newAge;
+  }
+
+  // Get & Set Guest room number
+  get room() {
+    return ` Fullname: ${this.firstName} ${this.lastName} settled in room ${this.guestRoom}`;
+  }
+
+  set room(roomNumber) {
+    this.guestRoom = roomNumber;
+  }
+}
+
+// const guest1 = new Guest({ fullName: "Anna Sokolova" });
+// console.log(guest1);
+// console.log(guest1.fullName);
+// guest1.age = 35;
+// console.log(guest1.age);
+// guest1.room = 377;
+// console.log(guest1.room);
