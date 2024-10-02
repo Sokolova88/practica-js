@@ -30,20 +30,58 @@ const Account = function ({ login, email } = {}) {
 Account.prototype.getInfo = function () {
   console.log(` Login - ${this.login} \n Email - ${this.email}`);
 };
-console.log(Account.prototype.getInfo); // function
+// console.log(Account.prototype.getInfo); // function
 
 const mango = new Account({
   login: "Mangozedog",
   email: "mango@dog.woof",
 });
 
-mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+// mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
 
 const poly = new Account({
   login: "Poly",
   email: "poly@mail.com",
 });
 
-poly.getInfo(); // Login: Poly, Email: poly@mail.com
+// poly.getInfo(); // Login: Poly, Email: poly@mail.com
 
-console.log(poly);
+// console.log(poly);
+
+/*
+Створіть функцію-конструктор Calculator, який створює об’єкти з трьома
+методами:
+read() запитує два значення за допомогою prompt і запам’ятовує їх у
+властивостях об’єкта.
+sum() повертає суму цих властивостей.
+mul() повертає результат множення даних властивостей.
+ */
+
+const Calculator = function (props) {
+  this.a = props.a;
+  this.b = props.b;
+};
+
+Calculator.prototype.read = function () {
+  this.a = Number(prompt("Enter first value"));
+  this.b = Number(prompt("Enter second value"));
+  return `First value - ${this.a}, Second value - ${this.b}`;
+};
+
+Calculator.prototype.sum = function () {
+  return `Summa - ${this.a + this.b}`;
+};
+
+Calculator.prototype.mul = function () {
+  return `Multiply - ${this.a * this.b}`;
+};
+
+const calc = new Calculator({});
+
+// console.log(calc.read());
+// console.log(calc);
+// console.log(calc.sum());
+// console.log(calc.mul());
+
+// alert(calc.sum());
+// alert(calc.mul());
